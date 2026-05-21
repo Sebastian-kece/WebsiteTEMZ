@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tentang Kami — TEMZSTORE</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+    .site-header {
+      background-color: #0051ff; 
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f9f7f5;
+      text-decoration: none;
+    }
+    .main-nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: #ffffff;
+      padding: 0.5rem;
+      transition: color 0.3s;
+    }
+    .main-nav a:hover {
+      color: #bc9292;
+    }
+    .cart-link {
+      font-weight: bold;
+      color: #0051ff; 
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f8f9fa;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .main-nav.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    .featured {
+      margin-top: 2rem;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover; 
+      border-bottom: 1px solid #ddd;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      margin: 1rem;
+    }
+    .price {
+      font-weight: bold;
+      color: #dc3545;
+      margin: 0 1rem;
+    }
+    .btn.small {
+      margin: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .btn.small:hover {
+      background-color: #0056b3;
+    }
+    .site-footer {
+      background-color: #0051ff; 
+      color: #fff;
+      padding: 1rem 0;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  </style>
+
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">TEMZSTORE</a>
+      <nav class="main-nav">
+        <a href="products.html">Produk</a>
+        <a href="about.html">Tentang</a>
+        <a href="contact.html">Kontak CS</a>
+        <a href="cart.html" class="cart-link">Keranjang (<span id="cart-count">0</span>)</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+  <main class="container">
+    <h1>Tentang TEMZSTORE</h1>
+    <p>TEMZSTORE didirikan pada tahun 2013 dengan misi menyediakan produk elektronik berkualitas tinggi kepada masyarakat. Kami khusus menawarkan produk Samsung seperti handphone (HP), tablet (Tab), jam tangan pintar (Jam), dan earbuds (Buds) yang asli dan terjamin. Tim kami terdiri dari ahli elektronik yang siap membantu Anda memilih produk yang tepat. Lokasi kami strategis di pusat kota, dengan layanan pengiriman ke seluruh Indonesia.</p>
+    <p><strong>Alamat :</strong> Jl. Ketintang No. xx, Kota Surabaya, Indonesia</p>
+    <p><strong>Email :</strong> info@toko-elektronik-TEMZSTORE.com</p>
+
+    <h2>Visi</h2>
+    <p>Menjadi toko elektronik terdepan di Indonesia yang memberikan pengalaman belanja yang inovatif dan memuaskan. Kami berkomitmen untuk menghadirkan produk Samsung terbaru dengan harga kompetitif, serta layanan pelanggan yang prima.</p>
+
+    <h2>Misi</h2>
+    <p>mendukung kehidupan digital masyarakat melalui produk Samsung yang handal, mulai dari smartphone, tablet, smartwatch, hingga earbuds</p>
+    
+    <h2>Tim Kami</h2>
+    <p>Tim TEMZSTORE terdiri dari para profesional berpengalaman di bidang teknologi dan penjualan. Pendiri kami, yang memiliki latar belakang di bidang teknik elektro, memimpin tim dengan semangat inovasi. Kami memiliki spesialis untuk setiap kategori produk Samsung, termasuk konsultan untuk membantu Anda memilih gadget yang sesuai dengan kebutuhan. Dengan lebih dari 50 anggota tim, kami siap melayani pelanggan dari pagi hingga malam.</p>
+
+    <h2>Produk Unggulan</h2>
+    <p>Kami menawarkan berbagai produk Samsung unggulan, seperti:</p>
+    <ul>
+      <li>Handphone (HP) Samsung dengan fitur terdepan seperti kamera tinggi resolusi, baterai tahan lama, dan layar AMOLED.</li>
+      <li>Tablet (Tab) Samsung yang cocok untuk pekerjaan, hiburan, dan pendidikan, dengan spesifikasi tinggi dan desain portabel.</li>
+      <li>Jam tangan pintar (Jam) Samsung dengan fitur kesehatan, notifikasi, dan desain elegan.</li>
+      <li>Earbuds (Buds) Samsung nirkabel dengan kualitas suara premium dan fitur noise-canceling.</li>
+    </ul>
+
+    <h2>Layanan Kami</h2>
+    <p>Selain penjualan produk, TEMZSTORE juga menyediakan layanan purna jual yang komprehensif. Kami menawarkan garansi resmi Samsung, servis perbaikan, dan konsultasi teknis gratis. Pengiriman dilakukan melalui jasa kurir terpercaya dengan opsi pengiriman cepat dan aman. Kami juga memiliki program loyalitas untuk pelanggan setia, termasuk diskon eksklusif dan promo bulanan untuk produk Samsung.</p>
+
+    <h2>Komitmen Kami terhadap Lingkungan</h2>
+    <p>TEMZSTORE peduli dengan lingkungan. Kami berkomitmen untuk mengurangi dampak negatif terhadap planet ini dengan menggunakan kemasan ramah lingkungan dan mendukung program daur ulang elektronik. Kami juga mendorong pelanggan untuk memilih produk Samsung yang efisien energi, membantu mengurangi konsumsi listrik dan jejak karbon.</p>
+
+    <h2>Hubungi Kami</h2>
+    <p>Jika Anda memiliki pertanyaan atau ingin informasi lebih lanjut tentang produk Samsung kami, jangan ragu untuk menghubungi kami. Kami tersedia melalui email, telepon, atau kunjungi langsung toko kami. Tim kami siap membantu Anda menemukan solusi elektronik terbaik dari Samsung.</p>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TEMZSTORE. Semua hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      document.getElementById('cart-count').textContent = cart.reduce((s,i)=>s+i.qty,0);
+    }
+    updateCartCount();
+    document.querySelector('.menu-toggle').addEventListener('click',()=>{
+      document.querySelector('.main-nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

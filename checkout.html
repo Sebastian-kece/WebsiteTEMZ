@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TEMZSTORE — Checkout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .site-header {
+      background-color: #0051ff; 
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f9f7f5;
+      text-decoration: none;
+    }
+    .main-nav {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: #f9f7f5;
+      padding: 0.5rem;
+      transition: color 0.3s;
+    }
+    .main-nav a:hover {
+      color: #bc9292;
+    }
+    .cart-link {
+      font-weight: bold;
+      color: #0051ff; 
+    }
+    .menu-toggle {
+      display: none; 
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #f8f9fa;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .main-nav.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    .featured {
+      margin-top: 2rem;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover; 
+      border-bottom: 1px solid #ddd;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      margin: 1rem;
+    }
+    .price {
+      font-weight: bold;
+      color: #dc3545; 
+      margin: 0 1rem;
+    }
+    .btn.small {
+      margin: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .btn.small:hover {
+      background-color: #0056b3;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      border: none;
+      cursor: pointer;
+      margin-right: 0.5rem;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .checkout-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      width: 100%;
+    }
+    .checkout-form label {
+      display: flex;
+      flex-direction: column;
+    }
+    .checkout-form input,
+    .checkout-form textarea,
+    .checkout-form select {
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .site-footer {
+      background-color: #0051ff;  
+      color: #fff;
+      padding: 1rem 0;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  </style>
+
+</head>
+<body>
+  <header class="site-header"><div class="container header-inner"><a class="logo" href="index.html">TEMZSTORE</a></div></header>
+  <main class="container">
+    <h1>Checkout</h1>
+    <form id="checkout-form" class="checkout-form">
+      <label>Nama Lengkap <input name="name" required></label>
+      <label>Alamat <textarea name="address" required></textarea></label>
+      <label>Metode Pembayaran
+        <select name="payment">
+          <option value="cod">Bayar di Tempat (COD)</option>
+          <option value="bank">Transfer Bank</option>
+        </select>
+      </label>
+      <button class="btn" type="submit">Bayar</button>
+    </form>
+    <div id="checkout-message"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TEMZSTORE. Semua hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('checkout-form').addEventListener('submit',e=>{
+      e.preventDefault();
+      localStorage.removeItem('cart');
+      document.getElementById('checkout-message').innerHTML = '<p>Terima kasih! Pesanan Anda sudah diterima.</p>';
+      updateCartCount();
+    });
+    function updateCartCount(){ const cart = JSON.parse(localStorage.getItem('cart')||'[]'); document.querySelectorAll('#cart-count').forEach(n=>n.textContent = cart.reduce((s,i)=>s+i.qty,0)); }
+  </script>
+</body>
+</html>
